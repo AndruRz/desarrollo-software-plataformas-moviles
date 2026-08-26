@@ -13,7 +13,7 @@ export default function ChallengeView() {
     return <Navigate to="/" replace />
   }
 
-  const { number, title, summary, instructions, dueDate, branch, Component } = challenge
+  const { number, title, summary, instructions, dueDate, branch, Component, pwaUrl, installGuide } = challenge
 
   return (
     <div className="container cv">
@@ -54,6 +54,34 @@ export default function ChallengeView() {
           </ul>
         </div>
       </div>
+
+      {installGuide && (
+        <div className="cv__block">
+          <div className="cv__block-head">como-instalar.md</div>
+          <div className="cv__block-body">
+            {pwaUrl && (
+              <p className="cv__install-link">
+                🔗{' '}
+                <a href={pwaUrl} target="_blank" rel="noreferrer">
+                  {pwaUrl}
+                </a>
+              </p>
+            )}
+            <div className="cv__install-grid">
+              {installGuide.map((platform) => (
+                <div className="cv__install-col" key={platform.platform}>
+                  <h3 className="cv__install-title">{platform.platform}</h3>
+                  <ol className="cv__install-steps">
+                    {platform.steps.map((step, i) => (
+                      <li key={i}>{step}</li>
+                    ))}
+                  </ol>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="cv__block cv__preview-wrap">
         <div className="cv__block-head">vista previa</div>

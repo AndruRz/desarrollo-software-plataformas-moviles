@@ -83,6 +83,12 @@
   border-radius: 8px;
   padding: 10px 14px;
   font-size: 14px;
+  flex-wrap: wrap;
+}
+
+.contact-item > div {
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .contact-item span {
@@ -101,4 +107,21 @@
 .contact-item button:hover {
   border-color: #e2685a;
   color: #e2685a;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 480px) {
+  .contact-form {
+    flex-direction: column;
+  }
+
+  .contact-form input,
+  .contact-form button {
+    width: 100%;
+  }
+
+  .contact-item {
+    flex-wrap: wrap;
+  }
 }

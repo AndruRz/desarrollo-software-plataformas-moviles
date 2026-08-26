@@ -18,10 +18,50 @@ export const REPO_URL =
         'Allow users to delete contacts.',
         'Divide the app into components.',
       ],
-      dueDate: 'Por definir',
+      dueDate: '8 de Agosto de 2026',
       branch: 'challenge-01',
       status: 'submitted',
       Component: lazy(() => import('../challenges/Challenge_01')),
+    },
+    {
+      slug: 'challenge-02',
+      number: '02',
+      title: 'Challenge 02',
+      summary:
+        'Transformacion de la app del Challenge 01 en una PWA instalable, con estrategia hibrida de cache e icono personalizado.',
+      instructions: [
+        'Based on the React app from the Challenge 01:',
+        'Add one image to your parent component.',
+        'Transform it into a PWA using Hybrid Strategy.',
+        'Add a custom icon.',
+        'Deploy the PWA in Netlify.',
+        'Add the Netlify Link to the Readme.md and describe how to install the app in the cellphone.',
+      ],
+      dueDate: '29 de Agosto de 2026',
+      branch: 'challenge-02',
+      status: 'submitted',
+      Component: lazy(() => import('../challenges/Challenge_02')),
+      pwaUrl: 'https://portafoliodesarrollosoftwareappmovil.netlify.app/',
+      installGuide: [
+        {
+          platform: 'Android (Chrome)',
+          steps: [
+            'Abre el link de Netlify en Chrome.',
+            'Toca el menú de tres puntos (⋮) arriba a la derecha.',
+            'Selecciona "Instalar app" o "Agregar a pantalla de inicio".',
+            'Confirma. El ícono de la app aparecerá en tu pantalla de inicio y se abrirá en modo standalone (sin la barra del navegador).',
+          ],
+        },
+        {
+          platform: 'iOS (Safari)',
+          steps: [
+            'Abre el link de Netlify en Safari.',
+            'Toca el botón de compartir (el cuadro con la flecha hacia arriba).',
+            'Selecciona "Agregar a inicio" (Add to Home Screen).',
+            'Confirma. El ícono aparecerá en tu pantalla de inicio.',
+          ],
+        },
+      ],
     },
 ]
 

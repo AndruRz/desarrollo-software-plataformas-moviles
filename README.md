@@ -57,3 +57,22 @@ src/
 - React 19 + Vite
 - React Router (rutas `/` y `/desafio/:slug`)
 - CSS plano con variables (tema oscuro, estética "git graph")
+## PWA — Despliegue e instalación
+
+El portafolio está desplegado como PWA en Netlify:
+
+🔗 **https://portafoliodesarrollosoftwareappmovil.netlify.app/**
+
+### Cómo instalarlo en el celular
+
+**Android (Chrome):**
+1. Abre el link de Netlify en Chrome.
+2. Toca el menú de tres puntos (⋮) arriba a la derecha.
+3. Selecciona **"Instalar app"** o **"Agregar a pantalla de inicio"**.
+4. Confirma. El ícono de la app aparecerá en tu pantalla de inicio y se abrirá en modo standalone (sin la barra del navegador).
+
+**iOS (Safari):**
+1. Abre el link de Netlify en Safari.
+2. Toca el botón de compartir (el cuadro con la flecha hacia arriba).
+3. Selecciona **"Agregar a inicio"** (Add to Home Screen).
+4. Confirma. El ícono aparecerá en tu pantalla de inicio.

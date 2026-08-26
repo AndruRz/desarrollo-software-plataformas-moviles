@@ -34,36 +34,19 @@ export default function Terminal({ lines }) {
   }, [])
 
   return (
-    <div
-      className="mono"
-      style={{
-        background: 'var(--bg-inset)',
-        border: '1px solid var(--line)',
-        borderRadius: 'var(--radius)',
-        overflow: 'hidden',
-        boxShadow: '0 20px 60px -30px rgba(0,0,0,0.6)',
-      }}
-    >
-      <div
-        style={{
-          display: 'flex',
-          gap: 6,
-          padding: '10px 14px',
-          borderBottom: '1px solid var(--line)',
-          background: 'var(--bg-raised)',
-        }}
-      >
+    <div className="mono terminal">
+      <div className="terminal__bar">
         {['#e2685a', '#e0b04a', '#5fb87a'].map((c) => (
           <span
             key={c}
             style={{ width: 10, height: 10, borderRadius: '50%', background: c, opacity: 0.8 }}
           />
         ))}
-        <span style={{ marginLeft: 8, fontSize: 12, color: 'var(--text-faint)' }}>
+        <span className="terminal__bar-label">
           desarrollo-software-plataformas-moviles
         </span>
       </div>
-      <div style={{ padding: '18px 16px 20px', fontSize: 13.5, lineHeight: 1.7 }}>
+      <div className="terminal__body">
         <div>
           <span style={{ color: 'var(--done)' }}>➜</span>{' '}
           <span style={{ color: 'var(--branch)' }}>repo</span>{' '}
@@ -82,9 +65,9 @@ export default function Terminal({ lines }) {
           />
         </div>
         {showLines && (
-          <div style={{ marginTop: 10, color: 'var(--text-dim)' }}>
+          <div className="terminal__lines">
             {lines.map((l, idx) => (
-              <div key={idx} style={{ whiteSpace: 'pre' }}>
+              <div key={idx} className="terminal__line">
                 {l}
               </div>
             ))}

@@ -1,0 +1,127 @@
+.challenge01 h2 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  margin: 0 0 16px;
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 30px 0;
+  color: var(--text-dim);
+  font-size: 14px;
+}
+
+.loader__spinner {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 3px solid var(--line);
+  border-top-color: var(--branch);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.contact-form input {
+  flex: 1;
+  min-width: 140px;
+  background: var(--bg-inset);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 9px 12px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.contact-form input:focus {
+  border-color: var(--branch-dim);
+}
+
+.contact-form button {
+  background: var(--branch);
+  color: #0b0d12;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-list__empty {
+  color: var(--text-faint);
+  font-size: 13.5px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--bg-inset);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+.contact-item > div {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.contact-item span {
+  color: var(--text-dim);
+}
+
+.contact-item button {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text-faint);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 12.5px;
+}
+
+.contact-item button:hover {
+  border-color: #e2685a;
+  color: #e2685a;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 480px) {
+  .contact-form {
+    flex-direction: column;
+  }
+
+  .contact-form input,
+  .contact-form button {
+    width: 100%;
+  }
+
+  .contact-item {
+    flex-wrap: wrap;
+  }
+}

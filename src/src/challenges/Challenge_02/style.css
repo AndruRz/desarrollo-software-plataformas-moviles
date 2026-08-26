@@ -1,0 +1,15 @@
+.challenge02__hero {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto 16px;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 480px) {
+  .challenge02__hero {
+    max-width: 100%;
+  }
+}

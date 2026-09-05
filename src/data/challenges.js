@@ -95,6 +95,43 @@ export const REPO_URL =
         },
       ],
     },
+
+        {
+      slug: 'challenge-03',
+      number: '03',
+      title: 'Challenge 03 (Ionic Task Manager)',
+      summary:
+        'App de gestión de tareas construida en Ionic desde cero: listar, agregar, marcar como completadas y eliminar tareas, con componentes padre-hijo (TaskForm, TaskList, TaskItem). Instalada y probada en un celular Android real vía Capacitor.',
+      instructions: [
+        'Create a new Task Manager app in ionic.',
+        'It should contain:',
+        'States and effects, if it’s necessary.',
+        'Child and parent components – at least 3 components.',
+        'View a task list',
+        'Add new tasks',
+        'Mark tasks as completed',
+        'Delete tasks',
+      ],
+      dueDate: 'PON AQUÍ LA FECHA REAL',
+      branch: 'challenge-03',
+      status: 'submitted',
+      appUrl: '/downloads/challenge-03-tasks.apk',
+      notes: [
+        'Estructura de componentes padre-hijo: Home (estado de la lista con useState) → TaskForm (agregar) y TaskList (renderiza) → TaskItem (marcar completada / eliminar).',
+      ],
+      screenshots: [
+        {
+          src: '/screenshots/challenge-03/icono-instalado.jpeg',
+          caption: 'App instalada como app nativa en Android vía Capacitor.',
+        },
+        {
+          src: '/screenshots/challenge-03/tareas-funcionando.jpeg',
+          caption: 'Lista de tareas con una tarea marcada como completada, en el dispositivo real.',
+        },
+      ],
+    },
+
+
 ]
 
 export function getChallengeBySlug(slug) {

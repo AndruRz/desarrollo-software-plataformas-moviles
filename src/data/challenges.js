@@ -79,7 +79,7 @@ export const REPO_URL =
       dueDate: '04 de Septiembre de 2026',
       branch: 'practice-01',
       status: 'submitted',
-      appUrl: '/downloads/practice-01-contactos.apk',
+      appUrl: '/downloads/app-debug.apk',
       notes: [
         '"Unsupported class file major version 70": Gradle falló porque el JDK por defecto del sistema era Java 26, incompatible con Gradle 8.14.3. Se solucionó apuntando JAVA_HOME al JDK 17 que trae Android Studio y agregando org.gradle.java.home en android/gradle.properties.',
         '"SDK location not found": faltaba el archivo android/local.properties. Se solucionó creándolo con sdk.dir apuntando a la ruta del Android SDK.',

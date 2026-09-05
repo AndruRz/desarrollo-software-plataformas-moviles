@@ -13,7 +13,20 @@ export default function ChallengeView() {
     return <Navigate to="/" replace />
   }
 
-  const { number, title, summary, instructions, dueDate, branch, Component, pwaUrl, installGuide } = challenge
+  const {
+    number,
+    title,
+    summary,
+    instructions,
+    dueDate,
+    branch,
+    Component,
+    pwaUrl,
+    installGuide,
+    appUrl,
+    notes,
+    screenshots,
+  } = challenge
 
   return (
     <div className="container cv">
@@ -83,16 +96,61 @@ export default function ChallengeView() {
         </div>
       )}
 
-      <div className="cv__block cv__preview-wrap">
-        <div className="cv__block-head">vista previa</div>
-        <div className="cv__preview-body">
-          <ChallengeErrorBoundary>
-            <Suspense fallback={<div className="cv__loading">cargando componente…</div>}>
-              <Component />
-            </Suspense>
-          </ChallengeErrorBoundary>
+      {Component && (
+        <div className="cv__block cv__preview-wrap">
+          <div className="cv__block-head">vista previa</div>
+          <div className="cv__preview-body">
+            <ChallengeErrorBoundary>
+              <Suspense fallback={<div className="cv__loading">cargando componente…</div>}>
+                <Component />
+              </Suspense>
+            </ChallengeErrorBoundary>
+          </div>
         </div>
-      </div>
+      )}
+
+      {appUrl && (
+        <div className="cv__block">
+          <div className="cv__block-head">descargar</div>
+          <div className="cv__block-body">
+            <p style={{ color: 'var(--text-dim)', fontSize: 14, marginBottom: 14 }}>
+              Este desafío se desarrolló como proyecto Ionic + Capacitor aparte del
+              portafolio. Descarga el APK para instalarlo en un celular Android, o
+              revisa el código completo en la rama de arriba.
+            </p>
+            <a className="btn btn--main" href={appUrl} download>
+              Descargar app (.apk) ↓
+            </a>
+          </div>
+        </div>
+      )}
+
+      {notes && (
+        <div className="cv__block">
+          <div className="cv__block-head">notas-de-desarrollo.md</div>
+          <div className="cv__block-body">
+            <ul className="cv__instructions">
+              {notes.map((line, i) => (
+                <li key={i}>{line}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+
+      {screenshots && (
+        <div className="cv__block">
+          <div className="cv__block-head">capturas</div>
+          <div className="cv__block-body cv__screens">
+            {screenshots.map((shot, i) => (
+              <figure key={i} className="cv__screen">
+                <img src={shot.src} alt={shot.caption} />
+                <figcaption>{shot.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   )
 }

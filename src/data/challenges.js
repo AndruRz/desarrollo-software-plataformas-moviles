@@ -63,6 +63,38 @@ export const REPO_URL =
         },
       ],
     },
+        {
+      slug: 'practice-01',
+      number: '01',
+      title: 'Practice 01 (Ionic)',
+      summary:
+        'Migración de la app de contactos del Challenge 01 a Ionic, usando solo componentes de Ionic (IonList, IonItem, IonInput, IonButton). Instalada y probada en un celular Android real vía Capacitor.',
+      instructions: [
+        'Once the environments is installed, let´s practice into ionic:',
+        'Based on the React app from the Challenge 01:',
+        'It’s not necessary to uninstall your PWA.',
+        'Let’s migrate your app to ionic using only ionic components.',
+        'Verify that the app continues working, installing it in your phone.',
+      ],
+      dueDate: '04 de Septiembre de 2026',
+      branch: 'practice-01',
+      status: 'submitted',
+      appUrl: '/downloads/practice-01-contactos.apk',
+      notes: [
+        '"Unsupported class file major version 70": Gradle falló porque el JDK por defecto del sistema era Java 26, incompatible con Gradle 8.14.3. Se solucionó apuntando JAVA_HOME al JDK 17 que trae Android Studio y agregando org.gradle.java.home en android/gradle.properties.',
+        '"SDK location not found": faltaba el archivo android/local.properties. Se solucionó creándolo con sdk.dir apuntando a la ruta del Android SDK.',
+      ],
+      screenshots: [
+        {
+          src: '/screenshots/practice-01/icono-instalado.jpeg',
+          caption: 'App instalada como app nativa en un Samsung SM-A566E vía Capacitor.',
+        },
+        {
+          src: '/screenshots/practice-01/contactos-funcionando.jpeg',
+          caption: 'Agregar y eliminar contactos funcionando en el dispositivo real, con componentes de Ionic.',
+        },
+      ],
+    },
 ]
 
 export function getChallengeBySlug(slug) {

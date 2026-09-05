@@ -186,3 +186,27 @@
     gap: 22px;
   }
 }
+
+.cv__screens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cv__screen {
+  margin: 0;
+  max-width: 220px;
+}
+
+.cv__screen img {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  display: block;
+}
+
+.cv__screen figcaption {
+  font-size: 12.5px;
+  color: var(--text-dim);
+  margin-top: 6px;
+}

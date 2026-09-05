@@ -112,7 +112,7 @@ export const REPO_URL =
         'Mark tasks as completed',
         'Delete tasks',
       ],
-      dueDate: 'PON AQUÍ LA FECHA REAL',
+      dueDate: '05 de Septiembre de 2026',
       branch: 'challenge-03',
       status: 'submitted',
       appUrl: '/downloads/challenge-03-tasks.apk',

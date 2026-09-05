@@ -1,0 +1,7 @@
+{
+  "name": "practice-02-details-contacts",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

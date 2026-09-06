@@ -131,6 +131,48 @@ export const REPO_URL =
       ],
     },
 
+    {
+      slug: 'practice-02',
+      number: '02',
+      title: 'Practice 02 (Detalle y Creación de Contactos)',
+      summary:
+        'Extensión de la app de contactos de Practice 01: 2 páginas nuevas (crear y ver detalle) con routing dinámico de Ionic React, y componentes de Ionic no usados antes (IonFab, IonItemSliding, IonCard).',
+      instructions: [
+        'Based on the React app from the Practice 01:',
+        'Create 2 new pages to create and show details from the contacts.',
+        'Use new components from ionic to enhance the app.',
+      ],
+      dueDate: 'TODO: pon aquí la fecha real de entrega',
+      dueDate: '06 de septiembre de 2026',
+      branch: 'practice-02',
+      status: 'submitted',
+      // appUrl: '/downloads/practice-02-details-contacts.apk',
+      // screenshots: [
+      //   { src: '/screenshots/practice-02/xxx.jpeg', caption: '...' },
+      // ],
+    },
+    {
+      slug: 'challenge-04',
+      number: '04',
+      title: 'Challenge 04 (Login Demo)',
+      summary:
+        'Página de login en Ionic con validación de credenciales fijas, token de sesión persistido en localStorage, rutas protegidas (RutaPrivada) y logout. Reutiliza las páginas de contactos de Practice 02 detrás del login.',
+      instructions: [
+        'Create a new Demo Login Page in ionic.',
+        'It should contain: Email, Password, Button to Login.',
+        'When the button is clicked, validate if the user is user@mail.com / password: 123.',
+        'In that case, store a token called logged = true and redirect to List page.',
+        'Next time we enter the app, check if the user is logged, then it’s not necessary to log-in again.',
+        'Create a button to logout, which cleans the token and redirects to the login page.',
+      ],
+      dueDate: '06 de septiembre de 2026',
+      branch: 'challenge-04',
+      status: 'submitted',
+      // appUrl: '/downloads/challenge-04-login.apk',
+      // screenshots: [
+      //   { src: '/screenshots/challenge-04/xxx.jpeg', caption: '...' },
+      // ],
+    },
 
 ]
 

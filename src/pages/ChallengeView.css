@@ -210,3 +210,18 @@
   color: var(--text-dim);
   margin-top: 6px;
 }
+
+@media (max-width: 480px) {
+  .cv__screen {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .cv__title {
+    font-size: 22px;
+  }
+
+  .cv__meta {
+    gap: 10px;
+  }
+}

@@ -1,10 +1,29 @@
+import { useMemo, useState } from 'react'
 import './Home.css'
 import Terminal from '../components/Terminal'
 import ChallengeCard from '../components/ChallengeCard'
+import ChallengeFilter from '../components/ChallengeFilter'
 import BranchPill from '../components/BranchPill'
 import { challenges, REPO_URL } from '../data/challenges'
 
 export default function Home() {
+  const [query, setQuery] = useState('')
+  const [activeBranch, setActiveBranch] = useState(null)
+
+  const branches = useMemo(
+    () => Array.from(new Set(challenges.map((c) => c.branch))),
+    []
+  )
+
+  const filteredChallenges = useMemo(() => {
+    const q = query.trim().toLowerCase()
+    return challenges.filter((c) => {
+      const matchesQuery = q === '' || c.title.toLowerCase().includes(q)
+      const matchesBranch = activeBranch === null || c.branch === activeBranch
+      return matchesQuery && matchesBranch
+    })
+  }, [query, activeBranch])
+
   const terminalLines = challenges.length
     ? challenges.map(
         (c) => `* ${c.slug.padEnd(14)} ${c.title} — ${c.status}`
@@ -54,9 +73,20 @@ export default function Home() {
         <div className="section__head">
           <h2 className="section__title">Desafíos</h2>
           <span className="section__count mono">
-            {challenges.length} rama{challenges.length === 1 ? '' : 's'}
+            {filteredChallenges.length} de {challenges.length} rama
+            {challenges.length === 1 ? '' : 's'}
           </span>
         </div>
+
+        {challenges.length > 0 && (
+          <ChallengeFilter
+            query={query}
+            onQueryChange={setQuery}
+            branches={branches}
+            activeBranch={activeBranch}
+            onBranchChange={setActiveBranch}
+          />
+        )}
 
         {challenges.length === 0 ? (
           <p className="empty-state">
@@ -64,9 +94,15 @@ export default function Home() {
             entrada en <code className="mono">src/data/challenges.js</code>{' '}
             aparecerá aquí automáticamente.
           </p>
+        ) : filteredChallenges.length === 0 ? (
+          <p className="empty-state">
+            Ningún desafío coincide con tu búsqueda
+            {activeBranch ? ` en la rama "${activeBranch}"` : ''}. Prueba con
+            otro término o toca "Todas".
+          </p>
         ) : (
           <div className="graph-rail">
-            {challenges.map((challenge) => (
+            {filteredChallenges.map((challenge) => (
               <ChallengeCard key={challenge.slug} challenge={challenge} />
             ))}
           </div>

@@ -131,7 +131,7 @@ export const REPO_URL =
       ],
     },
 
-    {
+        {
       slug: 'practice-02',
       number: '02',
       title: 'Practice 02 (Detalle y Creación de Contactos)',
@@ -142,16 +142,32 @@ export const REPO_URL =
         'Create 2 new pages to create and show details from the contacts.',
         'Use new components from ionic to enhance the app.',
       ],
-      dueDate: 'TODO: pon aquí la fecha real de entrega',
       dueDate: '06 de septiembre de 2026',
       branch: 'practice-02',
       status: 'submitted',
-      // appUrl: '/downloads/practice-02-details-contacts.apk',
-      // screenshots: [
-      //   { src: '/screenshots/practice-02/xxx.jpeg', caption: '...' },
-      // ],
+      appUrl: '/downloads/practice-02.apk',
+      screenshots: [
+        {
+          src: '/screenshots/practice-02/icono-instalado.jpeg',
+          caption: 'App instalada como app nativa en el celular vía Capacitor.',
+        },
+        {
+          src: '/screenshots/practice-02/lista-contactos.jpeg',
+          caption: 'Lista de contactos con navegación al detalle y botón flotante (IonFab) para agregar uno nuevo.',
+        },
+        {
+          src: '/screenshots/practice-02/detalle-contacto.jpeg',
+          caption: 'Página de detalle del contacto, con opción para eliminarlo.',
+        },
+        {
+          src: '/screenshots/practice-02/nuevo-contacto.jpeg',
+          caption: 'Página para crear un nuevo contacto.',
+        },
+      ],
     },
-    {
+
+
+      {
       slug: 'challenge-04',
       number: '04',
       title: 'Challenge 04 (Login Demo)',
@@ -168,10 +184,29 @@ export const REPO_URL =
       dueDate: '06 de septiembre de 2026',
       branch: 'challenge-04',
       status: 'submitted',
-      // appUrl: '/downloads/challenge-04-login.apk',
-      // screenshots: [
-      //   { src: '/screenshots/challenge-04/xxx.jpeg', caption: '...' },
-      // ],
+      appUrl: '/downloads/challenge-04-login.apk',
+      screenshots: [
+        {
+          src: '/screenshots/challenge-04/icono-instalado.jpeg',
+          caption: 'App instalada como app nativa en el celular vía Capacitor.',
+        },
+        {
+          src: '/screenshots/challenge-04/login.jpeg',
+          caption: 'Pantalla de login con validación de email/contraseña.',
+        },
+        {
+          src: '/screenshots/challenge-04/lista-contactos.jpeg',
+          caption: 'Tras iniciar sesión, redirige a la lista de contactos con botón de logout.',
+        },
+        {
+          src: '/screenshots/challenge-04/detalle-contacto.jpeg',
+          caption: 'Página de detalle del contacto, protegida por la ruta privada.',
+        },
+        {
+          src: '/screenshots/challenge-04/nuevo-contacto.jpeg',
+          caption: 'Página para crear un nuevo contacto, protegida por la ruta privada.',
+        },
+      ],
     },
 
 ]

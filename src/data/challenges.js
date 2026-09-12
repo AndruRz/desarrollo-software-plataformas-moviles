@@ -226,7 +226,7 @@ export const REPO_URL =
         'El estado del buscador debe estar en el componente padre y la lista filtrada debe enviarse al componente hijo que muestra los pacientes.',
       ],
       dueDate: '12 de septiembre de 2026',
-      branch: 'parcial-1-andre-rodriguez',
+      branch: 'parcial-1-Andre-rodriguez',
       status: 'submitted',
       Component: lazy(() => import('../challenges/Parcial_1')),
       standaloneDemo: true,
@@ -285,7 +285,7 @@ export const REPO_URL =
       'Guardar los cambios en localStorage.',
     ],
     dueDate: '12 de septiembre de 2026',
-    branch: 'parcial-1-andre-rodriguez',
+    branch: 'parcial-1-Andre-rodriguez',
     status: 'submitted',
     appUrl: '/downloads/parcial-1-ionic.apk',
     notes: [

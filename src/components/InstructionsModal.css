@@ -1,0 +1,121 @@
+.instructions-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 5, 8, 0.7);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 50;
+}
+
+.instructions-modal {
+  width: 100%;
+  max-width: 480px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg-raised);
+  overflow: hidden;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+}
+
+.instructions-modal__bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--bg-inset);
+  border-bottom: 1px solid var(--line);
+  flex-shrink: 0;
+}
+
+.instructions-modal__dots {
+  display: flex;
+  gap: 7px;
+}
+
+.instructions-modal__dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--line);
+}
+
+.instructions-modal__dots span:nth-child(1) { background: #e2685a; }
+.instructions-modal__dots span:nth-child(2) { background: #f2a93b; }
+.instructions-modal__dots span:nth-child(3) { background: #5fd9a4; }
+
+.instructions-modal__title {
+  flex: 1;
+  font-size: 12px;
+  color: var(--text-faint);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.instructions-modal__close {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text-faint);
+  border-radius: 6px;
+  width: 26px;
+  height: 26px;
+  font-size: 13px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.instructions-modal__close:hover {
+  border-color: #e2685a;
+  color: #e2685a;
+}
+
+.instructions-modal__body {
+  padding: 18px 20px;
+  overflow-y: auto;
+}
+
+.instructions-modal__list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-dim);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.instructions-modal__list li {
+  margin-bottom: 6px;
+}
+
+.instructions-modal__footer {
+  padding: 12px 20px;
+  border-top: 1px solid var(--line);
+  flex-shrink: 0;
+}
+
+.instructions-modal__link {
+  font-size: 12.5px;
+  color: var(--text-faint);
+}
+
+.instructions-modal__link:hover {
+  color: var(--branch);
+}
+
+@media (max-width: 480px) {
+  .instructions-modal {
+    max-height: 85vh;
+  }
+
+  .instructions-modal__body {
+    padding: 14px 16px;
+  }
+}

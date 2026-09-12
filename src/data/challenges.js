@@ -63,7 +63,7 @@ export const REPO_URL =
         },
       ],
     },
-        {
+    {
       slug: 'practice-01',
       number: '01',
       title: 'Practice 01 (Ionic)',
@@ -95,8 +95,7 @@ export const REPO_URL =
         },
       ],
     },
-
-        {
+    {
       slug: 'challenge-03',
       number: '03',
       title: 'Challenge 03 (Ionic Task Manager)',
@@ -130,8 +129,7 @@ export const REPO_URL =
         },
       ],
     },
-
-        {
+    {
       slug: 'practice-02',
       number: '02',
       title: 'Practice 02 (Detalle y Creación de Contactos)',
@@ -165,9 +163,7 @@ export const REPO_URL =
         },
       ],
     },
-
-
-      {
+    {
       slug: 'challenge-04',
       number: '04',
       title: 'Challenge 04 (Login Demo)',
@@ -208,7 +204,108 @@ export const REPO_URL =
         },
       ],
     },
-
+    {
+      slug: 'parcial-1-pwa',
+      number: '05',
+      title: 'Parcial 1 — Ejercicio 1 (PWA Pacientes)',
+      summary:
+        'PWA en React para la clínica MediClinic: login con sesión persistida en localStorage, CRUD de pacientes con validación de nombre/apellido/CC, y buscador con el estado en el componente padre y lista filtrada enviada al componente hijo.',
+      instructions: [
+        'La clínica MediClinic necesita dos aplicaciones simples para gestionar pacientes y visitas médicas.',
+        'Ejercicio 1 — PWA React: desarrollar una aplicación web con PWA para administración de pacientes.',
+        '1. Login: usar usuarios fijos proporcionados por el desarrollador mismo.',
+        'Si las credenciales son correctas, guardar el login en localStorage.',
+        'Al recargar, recuperar la sesión.',
+        'Permitir cerrar sesión.',
+        'Si las credenciales son incorrectas, mostrar un mensaje de error en pantalla.',
+        '2. Pacientes: mostrar una lista de pacientes.',
+        'Crear un formulario para agregar pacientes con los campos: nombre, apellido, CC y teléfono.',
+        'Validar nombre, apellido y CC.',
+        'Guardar los pacientes en localStorage.',
+        '3. Búsqueda: agregar un buscador por nombre, apellido o CC.',
+        'El estado del buscador debe estar en el componente padre y la lista filtrada debe enviarse al componente hijo que muestra los pacientes.',
+      ],
+      dueDate: '12 de septiembre de 2026',
+      branch: 'parcial-1-andre-rodriguez',
+      status: 'submitted',
+      Component: lazy(() => import('../challenges/Parcial_1')),
+      standaloneDemo: true,
+      pwaUrl: 'https://portafoliodesarrollosoftwareappmovil.netlify.app/desafio/parcial-1-pwa/demo',
+      installGuide: [
+        {
+          platform: 'Android (Chrome)',
+          steps: [
+            'Abre el link de Netlify en Chrome.',
+            'Toca el menú de tres puntos (⋮) arriba a la derecha.',
+            'Selecciona "Instalar app" o "Agregar a pantalla de inicio".',
+            'Confirma. El ícono de la app aparecerá en tu pantalla de inicio y se abrirá en modo standalone (sin la barra del navegador).',
+          ],
+        },
+        {
+          platform: 'iOS (Safari)',
+          steps: [
+            'Abre el link de Netlify en Safari.',
+            'Toca el botón de compartir (el cuadro con la flecha hacia arriba).',
+            'Selecciona "Agregar a inicio" (Add to Home Screen).',
+            'Confirma. El ícono aparecerá en tu pantalla de inicio.',
+          ],
+        },
+      ],
+      screenshots: [
+        {
+          src: '/screenshots/parcial-1-pwa/login.png',
+          caption: 'Pantalla de login con validación de credenciales.',
+        },
+        {
+          src: '/screenshots/parcial-1-pwa/pacientes.png',
+          caption: 'Lista de pacientes con el formulario para agregar uno nuevo.',
+        },
+        {
+          src: '/screenshots/parcial-1-pwa/busqueda.png',
+          caption: 'Buscador filtrando pacientes por nombre, apellido o CC.',
+        },
+      ],
+    },
+    {
+    slug: 'parcial-1-ionic',
+    number: '06',
+    title: 'Parcial 1 — Ejercicio 2 (Ionic Visitas Médicas)',
+    summary:
+      'App móvil en Ionic React con Tabs (Visitas, Pacientes, Perfil) para que un médico consulte sus visitas del día. Login con credenciales fijas y sesión en localStorage, cambio de estado de visita (pendiente → en camino → finalizada) persistido en localStorage. Instalada y probada en un celular Android real vía Capacitor.',
+    instructions: [
+      'La clínica MediClinic necesita dos aplicaciones simples para gestionar pacientes y visitas médicas.',
+      'Ejercicio 2 — Ionic React: desarrollar una aplicación móvil en Ionic con Tabs para que un médico consulte sus visitas.',
+      '1. Login: usar componentes de Ionic.',
+      'Mostrar un IonToast cuando las credenciales sean incorrectas.',
+      'Guardar la sesión en localStorage.',
+      '2. Navegación: después del login, utilizar IonTabs con Visitas, Pacientes y Perfil.',
+      '3. Visitas: mostrar las visitas del día, cada una con paciente, hora y estado.',
+      'Al seleccionar una visita, navegar al detalle de la visita.',
+      'En el detalle, permitir cambiar el estado: pendiente → en_camino → finalizada.',
+      'Guardar los cambios en localStorage.',
+    ],
+    dueDate: '12 de septiembre de 2026',
+    branch: 'parcial-1-andre-rodriguez',
+    status: 'submitted',
+    appUrl: '/downloads/parcial-1-ionic.apk',
+    notes: [
+      'Migración de react-router-dom v5 a v6: el starter de Ionic instaló v6, así que useHistory pasó a useNavigate, Redirect a Navigate, y las rutas usan element en vez de component/exact.',
+    ],
+    screenshots: [
+      {
+        src: '/screenshots/parcial-1-ionic/login.jpeg',
+        caption: 'Pantalla de login con credenciales fijas (doctor / 1234) y aviso de credenciales de prueba.',
+      },
+      {
+        src: '/screenshots/parcial-1-ionic/visitas.jpeg',
+        caption: 'Tab de Visitas del día mostrando paciente, hora y estado (pendiente, en camino, finalizada) en tema oscuro.',
+      },
+      {
+        src: '/screenshots/parcial-1-ionic/detalle-visita.jpeg',
+        caption: 'Detalle de una visita con el botón para avanzar el estado, guardado en localStorage.',
+      },
+    ],
+    },
 ]
 
 export function getChallengeBySlug(slug) {

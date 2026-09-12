@@ -26,6 +26,7 @@ export default function ChallengeView() {
     appUrl,
     notes,
     screenshots,
+    standaloneDemo,
   } = challenge
 
   return (
@@ -96,7 +97,22 @@ export default function ChallengeView() {
         </div>
       )}
 
-      {Component && (
+      {Component && standaloneDemo && (
+        <div className="cv__block cv__demo-cta">
+          <div className="cv__block-head">demo</div>
+          <div className="cv__block-body cv__demo-cta-body">
+            <p className="cv__demo-text">
+              Esta entrega corre como una app aparte, a pantalla completa —
+              no como una vista embebida en esta misma página.
+            </p>
+            <Link className="btn btn--main" to={`/desafio/${slug}/demo`}>
+              Continuar a la demo →
+            </Link>
+          </div>
+        </div>
+      )}
+
+      {Component && !standaloneDemo && (
         <div className="cv__block cv__preview-wrap">
           <div className="cv__block-head">vista previa</div>
           <div className="cv__preview-body">

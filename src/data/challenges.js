@@ -226,7 +226,7 @@ export const REPO_URL =
         'El estado del buscador debe estar en el componente padre y la lista filtrada debe enviarse al componente hijo que muestra los pacientes.',
       ],
       dueDate: '12 de septiembre de 2026',
-      branch: 'parcial-1-Andre-Rodriguez',
+      branch: 'parcial-1-Andre-rodriguez',
       status: 'submitted',
       Component: lazy(() => import('../challenges/Parcial_1')),
       standaloneDemo: true,
@@ -285,7 +285,7 @@ export const REPO_URL =
       'Guardar los cambios en localStorage.',
     ],
     dueDate: '12 de septiembre de 2026',
-    branch: 'parcial-1-Andre-Rodriguez',
+    branch: 'parcial-1-Andre-rodriguez',
     status: 'submitted',
     appUrl: '/downloads/parcial-1-ionic.apk',
     notes: [
@@ -305,6 +305,54 @@ export const REPO_URL =
         caption: 'Detalle de una visita con el botón para avanzar el estado, guardado en localStorage.',
       },
     ],
+    },
+    {
+      slug: 'challenge-05',
+      number: '05',
+      title: 'Challenge 05 (Tasks App con Firebase)',
+      summary:
+        'Transformación de la Task App de Ionic (Challenge 03) para agregar Login, Registro y Logout con Firebase Authentication, un contexto para las tareas, otro para la autenticación, y un hook personalizado para la lógica de Firebase.',
+      instructions: [
+        'Transform the Tasks App to add firebase Login/Register, custom hooks and contexts.',
+        'The app must contain: Login – Register – Logout with firebase.',
+        'Routing pages: Login, Register, Tasks list, Add / Edit Task, Task Detail.',
+        'Use one context to handle Tasks data through pages.',
+        'Use another context to handle login and Register data.',
+        'Use custom hooks to handle Firebase logic.',
+      ],
+      dueDate: '26 de septiembre de 2026',
+      branch: 'challenge-05',
+      status: 'submitted',
+      appUrl: '/downloads/challenge-05-tasks-firebase.apk',
+      notes: [
+        'La lógica de Firebase vive en un hook (useAuth); el AuthContext solo la expone al resto de la app, sin hablar con Firebase directamente.',
+      ],
+      screenshots: [
+        {
+          src: '/screenshots/challenge-05/login.jpg',
+          caption: 'Pantalla de login con Firebase Authentication (email/contraseña).',
+        },
+        {
+          src: '/screenshots/challenge-05/registro.jpg',
+          caption: 'Pantalla de registro para crear una cuenta nueva con Firebase.',
+        },
+        {
+          src: '/screenshots/challenge-05/lista-tareas.jpg',
+          caption: 'Lista de tareas tras iniciar sesión, con botón de logout y FAB para agregar.',
+        },
+        {
+          src: '/screenshots/challenge-05/tarea-completada.jpg',
+          caption: 'Tarea marcada como completada desde el contexto de tareas.',
+        },
+        {
+          src: '/screenshots/challenge-05/nueva-tarea.jpg',
+          caption: 'Página para agregar una nueva tarea.',
+        },
+        {
+          src: '/screenshots/challenge-05/detalle-tarea.jpg',
+          caption: 'Página de detalle de la tarea, con opciones de editar y eliminar.',
+        },
+      ],
     },
 ]
 

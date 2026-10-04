@@ -1,35 +1,26 @@
 // @ts-nocheck
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import {
-  IonPage,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonItem,
-  IonInput,
-  IonButton,
-  IonText,
+  IonPage, IonHeader, IonToolbar, IonTitle, IonContent,
+  IonItem, IonInput, IonButton, IonText,
 } from '@ionic/react';
-import { login } from '../auth';
+import { useAuthContext } from '../context/AuthContext';
 
-// Credenciales fijas que pide el challenge (no hay backend real).
-const VALID_EMAIL = 'user@mail.com';
-const VALID_PASSWORD = '123';
-
-const Login = () => {
+const Register = () => {
   const navigate = useNavigate();
+  const { register } = useAuthContext();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleLogin = () => {
-    if (email === VALID_EMAIL && password === VALID_PASSWORD) {
-      login(); // guarda logged = "true" en localStorage
-      navigate('/list', { replace: true });
-    } else {
-      setError('Email o contraseña incorrectos.');
+  const handleRegister = async () => {
+    setError('');
+    try {
+      await register(email, password);
+      navigate('/tabs/contactos', { replace: true });
+    } catch (err) {
+      setError('No se pudo crear la cuenta. Revisa el correo o usa una contraseña de al menos 6 caracteres.');
     }
   };
 
@@ -37,7 +28,7 @@ const Login = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Iniciar sesión</IonTitle>
+          <IonTitle>Crear cuenta</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -47,7 +38,7 @@ const Login = () => {
             label="Email"
             labelPlacement="stacked"
             type="email"
-            placeholder="user@mail.com"
+            placeholder="tucorreo@mail.com"
             value={email}
             onIonInput={(e) => setEmail(e.detail.value)}
           />
@@ -57,7 +48,7 @@ const Login = () => {
             label="Contraseña"
             labelPlacement="stacked"
             type="password"
-            placeholder="••••"
+            placeholder="Mínimo 6 caracteres"
             value={password}
             onIonInput={(e) => setPassword(e.detail.value)}
           />
@@ -69,12 +60,18 @@ const Login = () => {
           </IonText>
         )}
 
-        <IonButton expand="block" className="ion-margin-top" onClick={handleLogin}>
-          Login
+        <IonButton expand="block" className="ion-margin-top" onClick={handleRegister}>
+          Crear cuenta
         </IonButton>
+
+        <IonText>
+          <p className="ion-text-center">
+            ¿Ya tienes cuenta? <Link to="/login">Inicia sesión</Link>
+          </p>
+        </IonText>
       </IonContent>
     </IonPage>
   );
 };
 
-export default Login;
+export default Register;

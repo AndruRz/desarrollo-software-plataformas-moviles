@@ -4,6 +4,7 @@ export const REPO_URL =
   'https://github.com/AndruRz/desarrollo-software-plataformas-moviles'
 
   export const challenges = [
+
     {
       slug: 'challenge-01',
       number: '01',
@@ -23,6 +24,7 @@ export const REPO_URL =
       status: 'submitted',
       Component: lazy(() => import('../challenges/Challenge_01')),
     },
+
     {
       slug: 'challenge-02',
       number: '02',
@@ -63,6 +65,7 @@ export const REPO_URL =
         },
       ],
     },
+
     {
       slug: 'practice-01',
       number: '01',
@@ -95,6 +98,7 @@ export const REPO_URL =
         },
       ],
     },
+
     {
       slug: 'challenge-03',
       number: '03',
@@ -129,6 +133,7 @@ export const REPO_URL =
         },
       ],
     },
+
     {
       slug: 'practice-02',
       number: '02',
@@ -163,6 +168,7 @@ export const REPO_URL =
         },
       ],
     },
+
     {
       slug: 'challenge-04',
       number: '04',
@@ -204,6 +210,7 @@ export const REPO_URL =
         },
       ],
     },
+
     {
       slug: 'parcial-1-pwa',
       number: '05',
@@ -266,6 +273,7 @@ export const REPO_URL =
         },
       ],
     },
+
     {
     slug: 'parcial-1-ionic',
     number: '06',
@@ -306,6 +314,7 @@ export const REPO_URL =
       },
     ],
     },
+
     {
       slug: 'challenge-05',
       number: '05',
@@ -354,6 +363,34 @@ export const REPO_URL =
         },
       ],
     },
+
+    {
+      slug: 'challenge-06',
+      number: '07',
+      title: 'Challenge 06 (Firebase, Realtime y Dexie)',
+      summary:
+        'App Ionic con login real de Firebase y rutas protegidas. Contactos en Firestore, tareas en Realtime Database y frutas en Dexie. Detecta la conexión con @capacitor/network y deshabilita las acciones de contactos y tareas cuando no hay internet.',
+      instructions: [
+        'Implement a new app in ionic with real login and routes to handle, based on the previous challenges:',
+        'Contacts in Firebase.',
+        'Tasks in RealTime.',
+        'Fruits in Dexie - newFunction.',
+        'Validate if you have network connection, then enable or disable Contacts and Tasks actions depending on the network connection.',
+      ],
+      dueDate: '4 de octubre de 2026 (Disculpa la demora, tuve problemas con el Gradle y el JDK 26)',
+      branch: 'challenge-06',
+      status: 'submitted',
+      appUrl: '/downloads/challenge-06.apk',
+      screenshots: [
+        { src: '/screenshots/challenge-06/icono-instalado.png', caption: 'App instalada como app nativa vía Capacitor.' },
+        { src: '/screenshots/challenge-06/login.png', caption: 'Login real con Firebase Authentication.' },
+        { src: '/screenshots/challenge-06/contactos.png', caption: 'Contactos guardados en Firestore, filtrados por usuario.' },
+        { src: '/screenshots/challenge-06/tareas.png', caption: 'Tareas en Realtime Database, actualizadas en vivo.' },
+        { src: '/screenshots/challenge-06/frutas.png', caption: 'Frutas en Dexie con proveedor, fecha de cosecha y buscador.' },
+        { src: '/screenshots/challenge-06/sin-conexion.png', caption: 'Sin internet: contactos y tareas deshabilitados; las frutas siguen funcionando.' },
+      ],
+    },
+
 ]
 
 export function getChallengeBySlug(slug) {

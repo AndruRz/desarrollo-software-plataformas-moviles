@@ -391,6 +391,70 @@ export const REPO_URL =
       ],
     },
 
+        {
+      slug: 'challenge-07',
+      number: '07',
+      title: 'Challenge 07 (Sensores con Capacitor)',
+      summary:
+        'App en Ionic React que usa los sensores y APIs nativas del celular mediante custom hooks: geolocalización, cámara, acelerómetro, información del dispositivo, vibración (haptics), sistema de archivos, notificaciones locales y notificaciones push. Una página Home con un botón por sensor y una página por cada uno. Instalada y probada en un celular Android real vía Capacitor.',
+      instructions: [
+        'Create a new Empty App.',
+        'Use a Home Page to create buttons (one for each sensor).',
+        'Create one new page for each sensor to implement each one of them.',
+      ],
+      dueDate: '17 de octubre de 2026',
+      branch: 'challenge-07',
+      status: 'submitted',
+      appUrl: '/downloads/challenge-07-sensors.apk',
+      notes: [
+        'Cada sensor tiene su propio custom hook (useGeolocation, useCamera, useAccelerometer, useDevice, useHaptics, useFilesystem, useLocalNotifications, usePushNotifications) y una página que lo consume, dentro de un componente reutilizable SensorPage.',
+        'La app se cierra al activar las notificaciones push',
+      ],
+      screenshots: [
+        {
+          src: '/screenshots/challenge-07/icono-instalado.jpeg',
+          caption: 'App instalada como app nativa en un Samsung vía Capacitor.',
+        },
+        {
+          src: '/screenshots/challenge-07/home.jpeg',
+          caption: 'Pantalla Home con un botón por cada sensor.',
+        },
+        {
+          src: '/screenshots/challenge-07/geolocalizacion.jpeg',
+          caption: 'Geolocalización mostrando latitud, longitud, precisión, altitud y velocidad.',
+        },
+        {
+          src: '/screenshots/challenge-07/camara.jpeg',
+          caption: 'Cámara tomando una foto y mostrándola en pantalla.',
+        },
+        {
+          src: '/screenshots/challenge-07/acelerometro.jpeg',
+          caption: 'Acelerómetro con los ejes x, y, z y detección de sacudida.',
+        },
+        {
+          src: '/screenshots/challenge-07/dispositivo.jpeg',
+          caption: 'Información del dispositivo: modelo, sistema operativo y batería.',
+        },
+        {
+          src: '/screenshots/challenge-07/haptics.jpeg',
+          caption: 'Página de Haptics con los distintos tipos de vibración.',
+        },
+        {
+          src: '/screenshots/challenge-07/filesystem.jpeg',
+          caption: 'Sistema de archivos: crear, leer, listar y eliminar archivos.',
+        },
+        {
+          src: '/screenshots/challenge-07/notificaciones-locales.jpeg',
+          caption: 'Notificación local programada recibida en el dispositivo.',
+        },
+        {
+          src: '/screenshots/challenge-07/push.jpeg',
+          caption: 'Notificaciones push con el token de registro de Firebase.',
+        },
+      ],
+    },
+
+
 ]
 
 export function getChallengeBySlug(slug) {

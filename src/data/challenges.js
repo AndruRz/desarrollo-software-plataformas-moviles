@@ -3,8 +3,6 @@ import { lazy } from 'react'
 export const REPO_URL =
   'https://github.com/AndruRz/desarrollo-software-plataformas-moviles'
 
-  export const challenges = [
-
     export const challenges = [
 
     {
@@ -538,3 +536,4 @@ export function getChallengeBySlug(slug) {
 export function branchUrl(branch) {
   return `${REPO_URL}/tree/${branch}`
 }
+

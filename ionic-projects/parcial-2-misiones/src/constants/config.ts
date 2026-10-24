@@ -1,0 +1,9 @@
+export const MOVE_DISTANCE_METERS = 50;
+export const MAX_GPS_ACCURACY_METERS = 50;
+export const GPS_INTERVAL_MS = 1000;
+export const STILL_SECONDS = 10;
+export const STILL_TOLERANCE = 1;
+export const STILL_TICK_MS = 100;
+export const VIBRATION_MS = 1000;
+export const RANKING_SIZE = 5;
+export const GRAVITY = 9.81;

@@ -4,7 +4,6 @@ export const REPO_URL =
   'https://github.com/AndruRz/desarrollo-software-plataformas-moviles'
 
   export const challenges = [
-
     {
       slug: 'challenge-01',
       number: '01',
@@ -24,7 +23,6 @@ export const REPO_URL =
       status: 'submitted',
       Component: lazy(() => import('../challenges/Challenge_01')),
     },
-
     {
       slug: 'challenge-02',
       number: '02',
@@ -65,7 +63,6 @@ export const REPO_URL =
         },
       ],
     },
-
     {
       slug: 'practice-01',
       number: '01',
@@ -98,7 +95,6 @@ export const REPO_URL =
         },
       ],
     },
-
     {
       slug: 'challenge-03',
       number: '03',
@@ -133,7 +129,6 @@ export const REPO_URL =
         },
       ],
     },
-
     {
       slug: 'practice-02',
       number: '02',
@@ -168,7 +163,6 @@ export const REPO_URL =
         },
       ],
     },
-
     {
       slug: 'challenge-04',
       number: '04',
@@ -210,7 +204,6 @@ export const REPO_URL =
         },
       ],
     },
-
     {
       slug: 'parcial-1-pwa',
       number: '05',
@@ -273,7 +266,6 @@ export const REPO_URL =
         },
       ],
     },
-
     {
     slug: 'parcial-1-ionic',
     number: '06',
@@ -314,147 +306,79 @@ export const REPO_URL =
       },
     ],
     },
-
     {
-      slug: 'challenge-05',
-      number: '05',
-      title: 'Challenge 05 (Tasks App con Firebase)',
-      summary:
-        'Transformación de la Task App de Ionic (Challenge 03) para agregar Login, Registro y Logout con Firebase Authentication, un contexto para las tareas, otro para la autenticación, y un hook personalizado para la lógica de Firebase.',
-      instructions: [
-        'Transform the Tasks App to add firebase Login/Register, custom hooks and contexts.',
-        'The app must contain: Login – Register – Logout with firebase.',
-        'Routing pages: Login, Register, Tasks list, Add / Edit Task, Task Detail.',
-        'Use one context to handle Tasks data through pages.',
-        'Use another context to handle login and Register data.',
-        'Use custom hooks to handle Firebase logic.',
-      ],
-      dueDate: '26 de septiembre de 2026',
-      branch: 'challenge-05',
-      status: 'submitted',
-      appUrl: '/downloads/challenge-05-tasks-firebase.apk',
-      notes: [
-        'La lógica de Firebase vive en un hook (useAuth); el AuthContext solo la expone al resto de la app, sin hablar con Firebase directamente.',
-      ],
-      screenshots: [
-        {
-          src: '/screenshots/challenge-05/login.jpg',
-          caption: 'Pantalla de login con Firebase Authentication (email/contraseña).',
-        },
-        {
-          src: '/screenshots/challenge-05/registro.jpg',
-          caption: 'Pantalla de registro para crear una cuenta nueva con Firebase.',
-        },
-        {
-          src: '/screenshots/challenge-05/lista-tareas.jpg',
-          caption: 'Lista de tareas tras iniciar sesión, con botón de logout y FAB para agregar.',
-        },
-        {
-          src: '/screenshots/challenge-05/tarea-completada.jpg',
-          caption: 'Tarea marcada como completada desde el contexto de tareas.',
-        },
-        {
-          src: '/screenshots/challenge-05/nueva-tarea.jpg',
-          caption: 'Página para agregar una nueva tarea.',
-        },
-        {
-          src: '/screenshots/challenge-05/detalle-tarea.jpg',
-          caption: 'Página de detalle de la tarea, con opciones de editar y eliminar.',
-        },
-      ],
-    },
-
-    {
-      slug: 'challenge-06',
+      slug: 'parcial-2-ionic',
       number: '07',
-      title: 'Challenge 06 (Firebase, Realtime y Dexie)',
+      title: 'Parcial 2 (Ionic Misiones)',
       summary:
-        'App Ionic con login real de Firebase y rutas protegidas. Contactos en Firestore, tareas en Realtime Database y frutas en Dexie. Detecta la conexión con @capacitor/network y deshabilita las acciones de contactos y tareas cuando no hay internet.',
+        'App móvil en Ionic React donde usuarios reales (login y registro con Firebase Auth) desbloquean y completan misiones con sensores reales: cámara, GPS, acelerómetro y vibración. Suma puntos, muestra progreso, resultados, notificaciones locales y un ranking top 5. El progreso se guarda en Firebase Realtime Database y en localStorage. Instalada y probada en un celular Android real vía Capacitor.',
       instructions: [
-        'Implement a new app in ionic with real login and routes to handle, based on the previous challenges:',
-        'Contacts in Firebase.',
-        'Tasks in RealTime.',
-        'Fruits in Dexie - newFunction.',
-        'Validate if you have network connection, then enable or disable Contacts and Tasks actions depending on the network connection.',
+        'Construir, en 4 horas de trabajo, una app donde los usuarios desbloquean y completan misiones y por esto ganan puntos. Los usuarios son reales, pueden loguearse y registrarse en la app.',
+        'El usuario logueado podrá: ver misiones disponibles, completar acciones, ganar puntos, ver progreso y ranking básico.',
+        '1. Pantalla principal: lista de misiones (tomar foto, moverse 50 metros de su posición original, esperar 10 segundos quieto y entonces vibrar). Cada misión tiene estado (pendiente / completada) y puntos.',
+        '2. Sistema de misiones. Misión 1 (Evidencia): tomar una foto con la cámara; se completa al guardar la imagen.',
+        'Misión 2 (Movimiento real): detectar cambio de ubicación con distancia mayor a la indicada.',
+        'Misión 3 (Permanencia activa): una vez recorridos los 50 metros se habilita la siguiente misión y el usuario deberá mantenerse quieto 10 segundos; pasados los 10 segundos el celular vibra (sin bloquear pantalla).',
+        '3. Sistema de puntos: cada misión suma puntos y se muestra el total acumulado.',
+        '4. Progreso: barra de progreso con porcentaje completado y misiones completadas / total.',
+        '5. Persistencia: guardar en Firebase y local { "points": 120, "missions": [{ "id": 1, "completed": true }] }.',
+        '6. Pantalla de resultados: puntos totales, misiones completadas y estado general.',
+        'API: enviar puntos a Firebase.',
+        'Notificaciones locales: "Has completado una misión" y "Te falta 1 misión para completar".',
+        'Ranking: top 5 usuarios reales con puntaje real; el tuyo debe posicionarte frente a los otros 4.',
+        'Requisitos técnicos: Ionic + React; Capacitor (Camera, Geolocation, vibrador, Local Notifications, acelerómetro); Hooks; manejo de estado; Firebase y local storage.',
       ],
-      dueDate: '4 de octubre de 2026 (Disculpa la demora, tuve problemas con el Gradle y el JDK 26)',
-      branch: 'challenge-06',
+      dueDate: '24 de Octubre de 2026',
+      branch: 'parcial-2-Andre-rodriguez',
       status: 'submitted',
-      appUrl: '/downloads/challenge-06.apk',
-      screenshots: [
-        { src: '/screenshots/challenge-06/icono-instalado.png', caption: 'App instalada como app nativa vía Capacitor.' },
-        { src: '/screenshots/challenge-06/login.png', caption: 'Login real con Firebase Authentication.' },
-        { src: '/screenshots/challenge-06/contactos.png', caption: 'Contactos guardados en Firestore, filtrados por usuario.' },
-        { src: '/screenshots/challenge-06/tareas.png', caption: 'Tareas en Realtime Database, actualizadas en vivo.' },
-        { src: '/screenshots/challenge-06/frutas.png', caption: 'Frutas en Dexie con proveedor, fecha de cosecha y buscador.' },
-        { src: '/screenshots/challenge-06/sin-conexion.png', caption: 'Sin internet: contactos y tareas deshabilitados; las frutas siguen funcionando.' },
-      ],
-    },
-
-        {
-      slug: 'challenge-07',
-      number: '07',
-      title: 'Challenge 07 (Sensores con Capacitor)',
-      summary:
-        'App en Ionic React que usa los sensores y APIs nativas del celular mediante custom hooks: geolocalización, cámara, acelerómetro, información del dispositivo, vibración (haptics), sistema de archivos, notificaciones locales y notificaciones push. Una página Home con un botón por sensor y una página por cada uno. Instalada y probada en un celular Android real vía Capacitor.',
-      instructions: [
-        'Create a new Empty App.',
-        'Use a Home Page to create buttons (one for each sensor).',
-        'Create one new page for each sensor to implement each one of them.',
-      ],
-      dueDate: '17 de octubre de 2026',
-      branch: 'challenge-07',
-      status: 'submitted',
-      appUrl: '/downloads/challenge-07-sensors.apk',
+      appUrl: '/downloads/parcial-2-ionic.apk',
       notes: [
-        'Cada sensor tiene su propio custom hook (useGeolocation, useCamera, useAccelerometer, useDevice, useHaptics, useFilesystem, useLocalNotifications, usePushNotifications) y una página que lo consume, dentro de un componente reutilizable SensorPage.',
-        'La app se cierra al activar las notificaciones push',
+        'Estado global con Context + useReducer (MissionsContext). Los puntos no se guardan por separado en el estado: se derivan de las misiones completadas, así nunca quedan desincronizados.',
+        'Hooks propios por sensor: useCamera (Camera + Filesystem), useDistanceTracker (Geolocation + fórmula de Haversine), useStillness (Motion/acelerómetro con contador que se reinicia si hay movimiento), useVibration (Haptics) y useLocalNotifications.',
+        'Persistencia doble: localStorage al instante y Firebase Realtime Database (progress/{uid}); al iniciar sesión se fusionan ambos. Los puntos se envían además a ranking/{uid}.',
+        'El enunciado menciona 50 m en el título y más de 30 m en la condición; se usó 50 m (constante MOVE_DISTANCE_METERS) para que la misión 3 se habilite tras recorrer los 50 m.',
       ],
       screenshots: [
         {
-          src: '/screenshots/challenge-07/icono-instalado.jpeg',
-          caption: 'App instalada como app nativa en un Samsung vía Capacitor.',
+          src: '/screenshots/parcial-2-ionic/login.jpeg',
+          caption: 'Login con usuarios reales de Firebase Authentication.',
         },
         {
-          src: '/screenshots/challenge-07/home.jpeg',
-          caption: 'Pantalla Home con un botón por cada sensor.',
+          src: '/screenshots/parcial-2-ionic/registro.jpeg',
+          caption: 'Registro de cuenta nueva con nombre, correo y contraseña; el nombre es el que se muestra en el ranking.',
         },
         {
-          src: '/screenshots/challenge-07/geolocalizacion.jpeg',
-          caption: 'Geolocalización mostrando latitud, longitud, precisión, altitud y velocidad.',
+          src: '/screenshots/parcial-2-ionic/permiso-notificaciones.jpeg',
+          caption: 'Pantalla principal con las misiones pendientes; al entrar, Android pide permiso para las notificaciones locales.',
         },
         {
-          src: '/screenshots/challenge-07/camara.jpeg',
-          caption: 'Cámara tomando una foto y mostrándola en pantalla.',
+          src: '/screenshots/parcial-2-ionic/foto-evidencia.jpeg',
+          caption: 'Misión 1: la foto tomada con la cámara se muestra antes de guardarla; al guardar la imagen la misión se completa.',
         },
         {
-          src: '/screenshots/challenge-07/acelerometro.jpeg',
-          caption: 'Acelerómetro con los ejes x, y, z y detección de sacudida.',
+          src: '/screenshots/parcial-2-ionic/notificacion.jpeg',
+          caption: 'Notificación local "Has completado una misión" al terminar la misión 1.',
         },
         {
-          src: '/screenshots/challenge-07/dispositivo.jpeg',
-          caption: 'Información del dispositivo: modelo, sistema operativo y batería.',
+          src: '/screenshots/parcial-2-ionic/permiso-ubicacion.jpeg',
+          caption: 'Misión 2: Android pide permiso de ubicación precisa para medir la distancia recorrida con el GPS.',
         },
         {
-          src: '/screenshots/challenge-07/haptics.jpeg',
-          caption: 'Página de Haptics con los distintos tipos de vibración.',
+          src: '/screenshots/parcial-2-ionic/ranking.jpeg',
+          caption: 'Pestaña de ranking leyendo en tiempo real desde Firebase Realtime Database; el usuario se compara con los otros 4 mejores puntajes registrados.',
         },
         {
-          src: '/screenshots/challenge-07/filesystem.jpeg',
-          caption: 'Sistema de archivos: crear, leer, listar y eliminar archivos.',
+          src: '/screenshots/parcial-2-ionic/resultados.jpeg',
+          caption: 'Pantalla de resultados: puntos totales, misiones completadas y estado general (En progreso).',
         },
+      ],
+      videos: [
         {
-          src: '/screenshots/challenge-07/notificaciones-locales.jpeg',
-          caption: 'Notificación local programada recibida en el dispositivo.',
-        },
-        {
-          src: '/screenshots/challenge-07/push.jpeg',
-          caption: 'Notificaciones push con el token de registro de Firebase.',
+          src: '/videos/parcial-2-ionic/pasos-y-vibracion.mp4',
+          caption: 'Misiones 2 y 3 en el dispositivo real: la distancia crece al caminar, se habilita la permanencia activa y el celular vibra a los 10 segundos quieto.',
         },
       ],
     },
-
-
 ]
 
 export function getChallengeBySlug(slug) {

@@ -1,0 +1,7 @@
+{
+  "name": "parcial-2-misiones",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

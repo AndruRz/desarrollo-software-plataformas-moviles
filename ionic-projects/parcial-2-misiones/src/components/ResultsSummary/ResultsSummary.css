@@ -1,0 +1,27 @@
+.results-summary__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.results-summary__stat {
+  text-align: center;
+}
+
+.results-summary__number {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.results-summary__label {
+  font-size: 0.85rem;
+  color: var(--ion-color-medium);
+}
+
+.results-summary__status {
+  display: flex;
+  justify-content: center;
+}

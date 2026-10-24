@@ -26,6 +26,7 @@ export default function ChallengeView() {
     appUrl,
     notes,
     screenshots,
+    videos,
     standaloneDemo,
   } = challenge
 
@@ -162,6 +163,20 @@ export default function ChallengeView() {
               <figure key={i} className="cv__screen">
                 <img src={shot.src} alt={shot.caption} />
                 <figcaption>{shot.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {videos && (
+        <div className="cv__block">
+          <div className="cv__block-head">videos</div>
+          <div className="cv__block-body cv__videos">
+            {videos.map((video, i) => (
+              <figure key={i} className="cv__video">
+                <video src={video.src} controls playsInline preload="metadata" />
+                <figcaption>{video.caption}</figcaption>
               </figure>
             ))}
           </div>

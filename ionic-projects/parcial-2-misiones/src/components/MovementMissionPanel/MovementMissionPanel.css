@@ -1,0 +1,17 @@
+.movement-panel__reading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.movement-panel__distance {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.movement-panel__hint {
+  margin: 8px 0 12px;
+  font-size: 0.85rem;
+  color: var(--ion-color-medium);
+}

@@ -4,6 +4,9 @@ export const REPO_URL =
   'https://github.com/AndruRz/desarrollo-software-plataformas-moviles'
 
   export const challenges = [
+
+    export const challenges = [
+
     {
       slug: 'challenge-01',
       number: '01',
@@ -23,6 +26,7 @@ export const REPO_URL =
       status: 'submitted',
       Component: lazy(() => import('../challenges/Challenge_01')),
     },
+
     {
       slug: 'challenge-02',
       number: '02',
@@ -63,6 +67,7 @@ export const REPO_URL =
         },
       ],
     },
+
     {
       slug: 'practice-01',
       number: '01',
@@ -95,6 +100,7 @@ export const REPO_URL =
         },
       ],
     },
+
     {
       slug: 'challenge-03',
       number: '03',
@@ -129,6 +135,7 @@ export const REPO_URL =
         },
       ],
     },
+
     {
       slug: 'practice-02',
       number: '02',
@@ -163,6 +170,7 @@ export const REPO_URL =
         },
       ],
     },
+
     {
       slug: 'challenge-04',
       number: '04',
@@ -204,6 +212,7 @@ export const REPO_URL =
         },
       ],
     },
+
     {
       slug: 'parcial-1-pwa',
       number: '05',
@@ -266,6 +275,7 @@ export const REPO_URL =
         },
       ],
     },
+
     {
     slug: 'parcial-1-ionic',
     number: '06',
@@ -306,6 +316,146 @@ export const REPO_URL =
       },
     ],
     },
+
+    {
+      slug: 'challenge-05',
+      number: '05',
+      title: 'Challenge 05 (Tasks App con Firebase)',
+      summary:
+        'Transformación de la Task App de Ionic (Challenge 03) para agregar Login, Registro y Logout con Firebase Authentication, un contexto para las tareas, otro para la autenticación, y un hook personalizado para la lógica de Firebase.',
+      instructions: [
+        'Transform the Tasks App to add firebase Login/Register, custom hooks and contexts.',
+        'The app must contain: Login – Register – Logout with firebase.',
+        'Routing pages: Login, Register, Tasks list, Add / Edit Task, Task Detail.',
+        'Use one context to handle Tasks data through pages.',
+        'Use another context to handle login and Register data.',
+        'Use custom hooks to handle Firebase logic.',
+      ],
+      dueDate: '26 de septiembre de 2026',
+      branch: 'challenge-05',
+      status: 'submitted',
+      appUrl: '/downloads/challenge-05-tasks-firebase.apk',
+      notes: [
+        'La lógica de Firebase vive en un hook (useAuth); el AuthContext solo la expone al resto de la app, sin hablar con Firebase directamente.',
+      ],
+      screenshots: [
+        {
+          src: '/screenshots/challenge-05/login.jpg',
+          caption: 'Pantalla de login con Firebase Authentication (email/contraseña).',
+        },
+        {
+          src: '/screenshots/challenge-05/registro.jpg',
+          caption: 'Pantalla de registro para crear una cuenta nueva con Firebase.',
+        },
+        {
+          src: '/screenshots/challenge-05/lista-tareas.jpg',
+          caption: 'Lista de tareas tras iniciar sesión, con botón de logout y FAB para agregar.',
+        },
+        {
+          src: '/screenshots/challenge-05/tarea-completada.jpg',
+          caption: 'Tarea marcada como completada desde el contexto de tareas.',
+        },
+        {
+          src: '/screenshots/challenge-05/nueva-tarea.jpg',
+          caption: 'Página para agregar una nueva tarea.',
+        },
+        {
+          src: '/screenshots/challenge-05/detalle-tarea.jpg',
+          caption: 'Página de detalle de la tarea, con opciones de editar y eliminar.',
+        },
+      ],
+    },
+
+    {
+      slug: 'challenge-06',
+      number: '07',
+      title: 'Challenge 06 (Firebase, Realtime y Dexie)',
+      summary:
+        'App Ionic con login real de Firebase y rutas protegidas. Contactos en Firestore, tareas en Realtime Database y frutas en Dexie. Detecta la conexión con @capacitor/network y deshabilita las acciones de contactos y tareas cuando no hay internet.',
+      instructions: [
+        'Implement a new app in ionic with real login and routes to handle, based on the previous challenges:',
+        'Contacts in Firebase.',
+        'Tasks in RealTime.',
+        'Fruits in Dexie - newFunction.',
+        'Validate if you have network connection, then enable or disable Contacts and Tasks actions depending on the network connection.',
+      ],
+      dueDate: '4 de octubre de 2026 (Disculpa la demora, tuve problemas con el Gradle y el JDK 26)',
+      branch: 'challenge-06',
+      status: 'submitted',
+      appUrl: '/downloads/challenge-06.apk',
+      screenshots: [
+        { src: '/screenshots/challenge-06/icono-instalado.png', caption: 'App instalada como app nativa vía Capacitor.' },
+        { src: '/screenshots/challenge-06/login.png', caption: 'Login real con Firebase Authentication.' },
+        { src: '/screenshots/challenge-06/contactos.png', caption: 'Contactos guardados en Firestore, filtrados por usuario.' },
+        { src: '/screenshots/challenge-06/tareas.png', caption: 'Tareas en Realtime Database, actualizadas en vivo.' },
+        { src: '/screenshots/challenge-06/frutas.png', caption: 'Frutas en Dexie con proveedor, fecha de cosecha y buscador.' },
+        { src: '/screenshots/challenge-06/sin-conexion.png', caption: 'Sin internet: contactos y tareas deshabilitados; las frutas siguen funcionando.' },
+      ],
+    },
+
+        {
+      slug: 'challenge-07',
+      number: '07',
+      title: 'Challenge 07 (Sensores con Capacitor)',
+      summary:
+        'App en Ionic React que usa los sensores y APIs nativas del celular mediante custom hooks: geolocalización, cámara, acelerómetro, información del dispositivo, vibración (haptics), sistema de archivos, notificaciones locales y notificaciones push. Una página Home con un botón por sensor y una página por cada uno. Instalada y probada en un celular Android real vía Capacitor.',
+      instructions: [
+        'Create a new Empty App.',
+        'Use a Home Page to create buttons (one for each sensor).',
+        'Create one new page for each sensor to implement each one of them.',
+      ],
+      dueDate: '17 de octubre de 2026',
+      branch: 'challenge-07',
+      status: 'submitted',
+      appUrl: '/downloads/challenge-07-sensors.apk',
+      notes: [
+        'Cada sensor tiene su propio custom hook (useGeolocation, useCamera, useAccelerometer, useDevice, useHaptics, useFilesystem, useLocalNotifications, usePushNotifications) y una página que lo consume, dentro de un componente reutilizable SensorPage.',
+        'La app se cierra al activar las notificaciones push',
+      ],
+      screenshots: [
+        {
+          src: '/screenshots/challenge-07/icono-instalado.jpeg',
+          caption: 'App instalada como app nativa en un Samsung vía Capacitor.',
+        },
+        {
+          src: '/screenshots/challenge-07/home.jpeg',
+          caption: 'Pantalla Home con un botón por cada sensor.',
+        },
+        {
+          src: '/screenshots/challenge-07/geolocalizacion.jpeg',
+          caption: 'Geolocalización mostrando latitud, longitud, precisión, altitud y velocidad.',
+        },
+        {
+          src: '/screenshots/challenge-07/camara.jpeg',
+          caption: 'Cámara tomando una foto y mostrándola en pantalla.',
+        },
+        {
+          src: '/screenshots/challenge-07/acelerometro.jpeg',
+          caption: 'Acelerómetro con los ejes x, y, z y detección de sacudida.',
+        },
+        {
+          src: '/screenshots/challenge-07/dispositivo.jpeg',
+          caption: 'Información del dispositivo: modelo, sistema operativo y batería.',
+        },
+        {
+          src: '/screenshots/challenge-07/haptics.jpeg',
+          caption: 'Página de Haptics con los distintos tipos de vibración.',
+        },
+        {
+          src: '/screenshots/challenge-07/filesystem.jpeg',
+          caption: 'Sistema de archivos: crear, leer, listar y eliminar archivos.',
+        },
+        {
+          src: '/screenshots/challenge-07/notificaciones-locales.jpeg',
+          caption: 'Notificación local programada recibida en el dispositivo.',
+        },
+        {
+          src: '/screenshots/challenge-07/push.jpeg',
+          caption: 'Notificaciones push con el token de registro de Firebase.',
+        },
+      ],
+    },
+    
     {
       slug: 'parcial-2-ionic',
       number: '07',

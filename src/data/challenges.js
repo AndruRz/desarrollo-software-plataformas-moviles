@@ -3,8 +3,6 @@ import { lazy } from 'react'
 export const REPO_URL =
   'https://github.com/AndruRz/desarrollo-software-plataformas-moviles'
 
-  export const challenges = [
-
     export const challenges = [
 
     {
@@ -529,6 +527,31 @@ export const REPO_URL =
         },
       ],
     },
+
+    {
+      slug: 'challenge-08',
+      number: '08',
+      title: 'Challenge 08 (Supabase: Auth, RLS, Realtime y Storage)',
+      summary:
+        'App Ionic React conectada a Supabase: registro, login y rutas protegidas con Supabase Auth, CRUD de tareas en una tabla con Row Level Security, lista actualizada en vivo con Realtime, y avatar tomado con la cámara (Capacitor Camera) y guardado en un bucket de Storage. Instalada y probada en Android vía Capacitor.',
+      instructions: [
+        'Create the project, the tasks table with RLS, and the avatars bucket.',
+        'Registration, login, CRUD, and live list.',
+        'Use Ionic components and camera photo capture.',
+      ],
+      dueDate: '16 de Noviembre de 2026',
+      branch: 'challenge-08',
+      status: 'submitted',
+      appUrl: '/downloads/challenge-08-supabase.apk',
+      notes: [
+        'Tabla tareas con RLS: cuatro políticas (select, insert, update, delete) que solo permiten ver y modificar filas donde user_id = auth.uid(). El user_id se llena solo con default auth.uid().',
+        'Lista en vivo con Supabase Realtime (postgres_changes) sobre la tabla tareas, evitando duplicados con las tareas creadas localmente.',
+        'Bucket avatars público para lectura; las políticas de storage solo dejan subir, reemplazar y borrar dentro de la carpeta del propio usuario (avatars/{uid}/...). La URL se guarda en user_metadata.avatar_url.',
+        'Arquitectura por capas: services (authService, tareasService, avatarService, cameraService), hooks (useSession, useTareas, useAvatar) y componentes de Ionic.',
+        'En Android se desactivó "Confirm email" en Supabase, porque el enlace de confirmación apunta a https://localhost y no abre la app.',
+      ],
+    },
+
 ]
 
 export function getChallengeBySlug(slug) {

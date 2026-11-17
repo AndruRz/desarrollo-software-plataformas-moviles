@@ -552,6 +552,39 @@ export const REPO_URL =
       ],
     },
 
+        {
+      slug: 'challenge-09',
+      number: '09',
+      title: 'Challenge 09 (Mapa y Sensores)',
+      summary:
+        'App Ionic React con mapa (Leaflet/OpenStreetMap) que registra recorridos usando varios sensores: GPS, red, batería, vibración, cámara, sistema de archivos y notificaciones locales. Guarda los recorridos en JSON por día con una página de historial, toma fotos con la ubicación como marca de agua y muestra la dirección actual y los lugares cercanos con la API de OpenCage. Instalada y probada en un celular Android real vía Capacitor.',
+      instructions: [
+        'Complete the maps app by using different sensors. Some examples:',
+        'Check if you have wifi to get current address, show the map, etc.',
+        'You could detect if the phone is moving or not, to start/stop tracking.',
+        'Save the tracking in a JSON file, then make a history page to show previous tracking in a day.',
+        'Take a picture and put the current location as a watermark.',
+        'Vibrate the phone on start tracking.',
+        'Stop tracking when battery is low.',
+        'Create smart notifications (long time without moving, no connection, quick moving).',
+        'Show nearest places with OpenCage API.',
+      ],
+      dueDate: 'DD de Noviembre de 2026',
+      branch: 'challenge-09',
+      status: 'submitted',
+      appUrl: '/downloads/challenge-09-maps.apk',
+      notes: [
+        'Sensores y APIs usados: @capacitor/geolocation (watchPosition), @capacitor/network (Wi-Fi, datos o sin conexión), @capacitor/device (batería), @capacitor/haptics (vibración al iniciar), @capacitor/camera, @capacitor/filesystem y @capacitor/local-notifications.',
+        'Modo automático: el recorrido inicia solo al detectar movimiento (15 m o más de 1 m/s) y se detiene tras 60 segundos quieto. Con la batería en 15 % o menos (sin cargar) no deja iniciar y detiene el recorrido en curso, guardándolo.',
+        'Notificaciones inteligentes: mucho tiempo sin moverse (2 minutos), pérdida de conexión durante un recorrido y movimiento rápido (8 m/s o más, unos 29 km/h).',
+        'Persistencia: cada recorrido se agrega a un archivo JSON por día (recorridos/AAAA-MM-DD.json) en el almacenamiento de la app. La página de historial lista los días y dibuja cada ruta en un mapa.',
+        'La foto se dibuja en un canvas con coordenadas, dirección y fecha como marca de agua, y se guarda en la carpeta fotos/ del dispositivo.',
+        'OpenCage: geocodificación inversa para la dirección actual (solo con conexión) y búsqueda de lugares cercanos por tipo, ordenados por distancia. Usa una llave gratuita en VITE_OPENCAGE_KEY, con límite diario de consultas.',
+        'Arquitectura por capas: services (geo, red, batería, vibración, notificaciones, recorridos, foto, opencage), hooks (useTracking, useRed, useDireccion, useFotoMarcada, useLugares) y componentes de Ionic. La lógica de movimiento está en funciones puras con pruebas unitarias.',
+      ],
+    },
+
+
 ]
 
 export function getChallengeBySlug(slug) {

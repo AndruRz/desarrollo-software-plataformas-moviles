@@ -569,7 +569,7 @@ export const REPO_URL =
         'Create smart notifications (long time without moving, no connection, quick moving).',
         'Show nearest places with OpenCage API.',
       ],
-      dueDate: 'DD de Noviembre de 2026',
+      dueDate: '16 de Noviembre de 2026',
       branch: 'challenge-09',
       status: 'submitted',
       appUrl: '/downloads/challenge-09-maps.apk',

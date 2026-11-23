@@ -584,6 +584,33 @@ export const REPO_URL =
       ],
     },
 
+    {
+      slug: 'challenge-10',
+      number: '10',
+      title: 'Challenge 10 (Buscador de GIFs con Giphy)',
+      summary:
+        'Buscador de GIFs que consume la API de Giphy mientras el usuario escribe en un campo de búsqueda y muestra los resultados en una cuadrícula. Usa fetch con AbortController, debounce y la API key guardada en variables de entorno (.env).',
+      instructions: [
+        'Create an account in https://developers.giphy.com/',
+        'Add one App and read api documentation from GIPHY',
+        'Create a new project to search and show Gifs, you could search by writing in an input field, then show the Gifs in screen.',
+        'Set the api key into environment variables (.env)',
+        'Use search api to get gifs from Giphy',
+        'Implement Fetch / Axios to call the api.',
+      ],
+      dueDate: 'DD de Noviembre de 2026',
+      branch: 'challenge-10',
+      status: 'submitted',
+      Component: lazy(() => import('../challenges/Challenge_10')),
+      notes: [
+        'La vista previa de esta página usa React con los estilos del portafolio; el proyecto Ionic completo (IonSearchbar, IonSpinner, IonImg) está en la rama challenge-10.',
+        'Capas: services/giphy.js (llamada a la API con fetch y URLSearchParams), hooks/useGifSearch.js (estado, debounce y cancelación) y componentes SearchBar y GifGrid.',
+        'fetch no lanza error con códigos 4xx/5xx, por eso el servicio revisa res.ok y lanza un Error con el código recibido.',
+        'Cada vez que cambia el texto se cancela la petición anterior con AbortController y se espera 500 ms antes de llamar a la API, para no hacer una petición por letra ni mostrar resultados viejos.',
+        'La API key vive en el archivo .env (VITE_GIPHY_API_KEY), que no se sube a git; en el repositorio queda un .env.example.',
+      ],
+    },
+
 
 ]
 
